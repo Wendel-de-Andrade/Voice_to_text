@@ -1,5 +1,19 @@
 const languages = [
     {
+        no: "38",
+        name: "Portuguese",
+        native: "Português",
+        name_br: "Português",
+        code: "pt",
+    },
+    {
+        no: "12",
+        name: "English",
+        native: "English",
+        name_br: "Inglês",
+        code: "en",
+    },
+    {
         no: "1",
         name: "Afrikaans",
         native: "Afrikaans",
@@ -75,13 +89,6 @@ const languages = [
         native: "Nederlands",
         name_br: "Holandês",
         code: "nl",
-    },
-    {
-        no: "12",
-        name: "English",
-        native: "English",
-        name_br: "Inglês",
-        code: "en",
     },
     {
         no: "13",
@@ -257,13 +264,6 @@ const languages = [
         native: "Polski",
         name_br: "Polonês",
         code: "pl",
-    },
-    {
-        no: "38",
-        name: "Portuguese",
-        native: "Português",
-        name_br: "Português",
-        code: "pt",
     },
     {
         no: "39",
