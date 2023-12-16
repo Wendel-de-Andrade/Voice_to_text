@@ -29,4 +29,18 @@ document.addEventListener('DOMContentLoaded', () => {
     clearButton.addEventListener('click', clearResults);
 
     downloadButton.disabled = true;
+
+    recognition.onresult = (event) => {
+        const result = event.results[event.results.lenght - 1][0].transcript;
+        resultContainer.textContent = result;
+        downloadButton.disabled = false;
+    };
+
+    recognition.onend = () => {
+        recognizing = false;
+        startListeningButton.classList.remove('recording');
+        recordButtonText.textContent = 'Start Listening';
+    };
+
+    downloadButton.addEventListener('click', downloadResult);
 })
