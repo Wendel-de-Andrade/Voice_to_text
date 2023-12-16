@@ -61,5 +61,41 @@ body {
     margin: 20px 0;
 }
 
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    margin-bottom: 20px;
+    height: 42px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #fff;
+    background: #303f9f;
+}
+
+.btn i{
+    font-size: 24px;
+}
+
+.btn:disabled{
+    background: #a5a5a5;
+    cursor: not-allowed;
+}
+
+.container .record .bx-spin{
+    display: none;
+}
+
+.container .record.recording .bx-spin{
+    display: block;
+}
+
+.container .record.recording i{
+    display: none;
+}
 
 
