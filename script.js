@@ -43,4 +43,39 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     downloadButton.addEventListener('click', downloadResult);
-})
+
+    function toggleSpeechRecognition() {
+        if (recognizing) {
+            recognition.stop();
+        } else {
+            recognition.start();
+        }
+
+        recognizing = !recognizing;
+        startListeningButton.classList.toggle('recording', recognizing);
+        recordButtonText.textContent = 'Stop Listening';
+    }
+
+    function clearResults() {
+        resultContainer.textContent = '';
+        downloadButton.disabled = true;
+    }
+
+    function downloadResult() {
+        const resultText = sedultContainer.textContent;
+
+        const blob = new Blob([resultText], { type: 'text/plain' });
+        const url = URL.createObjectURL(blob);
+
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'Yout-Text.txt';
+        a.style.display = 'none';
+
+        document.body.appendChild(a);
+        a.click();
+
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    }
+});
