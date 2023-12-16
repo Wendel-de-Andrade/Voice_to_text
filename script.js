@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         languageSelect.add(option);
     });
 
-    recognition.continuos = true;
+    recognition.continuous = true;
     recognition.interimResults = true;
     recognition.lang = languageSelect.value;
 
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     downloadButton.disabled = true;
 
     recognition.onresult = (event) => {
-        const result = event.results[event.results.lenght - 1][0].transcript;
+        const result = event.results[event.results.length - 1][0].transcript;
         resultContainer.textContent = result;
         downloadButton.disabled = false;
     };
@@ -62,14 +62,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function downloadResult() {
-        const resultText = sedultContainer.textContent;
+        const resultText = resultContainer.textContent;
 
         const blob = new Blob([resultText], { type: 'text/plain' });
         const url = URL.createObjectURL(blob);
 
         const a = document.createElement('a');
         a.href = url;
-        a.download = 'Yout-Text.txt';
+        a.download = 'Your-Text.txt';
         a.style.display = 'none';
 
         document.body.appendChild(a);
